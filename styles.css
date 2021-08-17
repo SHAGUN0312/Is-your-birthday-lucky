@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Permanent+Marker&family=Style+Script&display=swap');
+
+/* CSS pseudo Class --- represents the <html> element and is identical to the selector html, exept that its specificity is higher  */
+:root {
+    --primary-color: rgb(141, 120, 0);
+    --headingFont: 'Style Script', cursive;
+    --resultFont: 'Permanent Marker', cursive;
+    --contentFont: 'Amatic SC', cursive;
+}
+
+/* Selects all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: black;
+}
+
+body {
+    margin-top: 1rem;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    /* background-color: black; */
+    /* background-color: rgb(141, 120, 0); */
+}
+
+.card {
+    margin: 0.5rem auto 0.5rem;
+    width: 25rem;
+    height: 36rem;
+    perspective: 1000px;
+}
+
+.card__inner {
+    height: 100%;
+    width: auto;
+    transition: transform 2.2s;
+    transform-style: preserve-3d;
+    position: relative;
+
+}
+
+.card__inner.is-flipped {
+    transform: rotateY(180deg);
+}
+
+.card__face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    overflow: hidden;
+    /* border-radius: 15rem; */
+    background-color: rgb(141, 120, 0);
+    border-radius: 1rem 8rem 11rem 11rem;
+    box-shadow: -13px -10px 10px black, 13px 10px 10px black;
+}
+
+.card__face--front {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* position: relative; */
+}
+
+.card__face h1 {
+    position: absolute;
+    top: 4.5rem;
+    text-align: center;
+    font: 3.2rem var(--headingFont);
+    letter-spacing: 0.5rem;
+}
+
+.card__face p {
+    position: absolute;
+    top: 10rem;
+    text-align: center;
+    font: 1.3rem/1.7rem var(--contentFont);
+    letter-spacing: 0.1rem;
+}
+
+.one {
+    position: absolute;
+    top: 15rem;
+    text-align: center;
+    font: 1.3rem/1.7rem var(--contentFont);
+    letter-spacing: 0.1rem;
+}
+
+input {
+    position: absolute;
+    top: 16rem;
+    left: 3rem;
+    background-color: black;
+    border-radius: 1rem;
+    width: 80%;
+    padding: 0.6rem 1rem;
+    margin: 1.5rem 0rem;
+    color: white;
+    outline: none;
+    border: 2px solid white;
+}
+
+.two {
+    position: absolute;
+    top: 22rem;
+    font: 1.3rem/1.7rem var(--contentFont);
+    letter-spacing: 0.1rem;
+}
+
+input[type="number"] {
+    position: absolute;
+    top: 23rem;
+    left: 3rem;
+    padding: 0.7rem 1.1rem;
+}
+
+::placeholder {
+    color: white;
+    font: 0.9rem var(--contentFont);
+    letter-spacing: 0.1rem;
+}
+
+/* .card__face #notice {
+    position: absolute;
+    top: 2rem;
+    left: 3rem;
+    border: 1px solid red;
+    border-radius: 2rem;
+    line-height: 1.5rem;
+    text-align: center;
+    padding: 0rem 2rem;
+} */
+
+.card__face #errorMsg {
+    position: absolute;
+    top: 28.5rem;
+    text-align: center;
+    font: 1.2rem var(--contentFont);
+    letter-spacing: 0.1rem;
+
+
+}
+
+/* check */
+button {
+    position: absolute;
+    top: 31.5rem;
+    left: 9.3rem;
+    padding: 0.4rem 1rem;
+    border-radius: 2rem;
+    border: 2px solid black;
+    cursor: pointer;
+    color: black;
+    font: 1.3rem var(--contentFont);
+    letter-spacing: 0.3rem;
+}
+
+button:hover {
+    color: white;
+    background-color: black;
+    border-color: white;
+}
+
+.card__face--back {
+    transform: rotateY(180deg);
+}
+
+/* unlucky page styling */
+
+.card__face--back #unluckyImg {
+    position: absolute;
+    object-fit: cover;
+    left: 3.5rem;
+    top: 2rem;
+    background-color: black;
+    border-radius: 1rem 8rem 11rem 11rem;
+    box-shadow: -8px -5px 10px white, 8px 5px 10px white;
+}
+
+.card__face--back #unluckyText {
+    position: absolute;
+    top: 23rem;
+    right: 3.5rem;
+    font: 1.5rem/2rem var(--resultFont);
+    letter-spacing: 0.1rem;
+}
+
+/* lucky page styling */
+.card__face--back #luckyImg {
+    position: absolute;
+    object-fit: cover;
+    bottom: 2.5rem;
+}
+
+.card__face--back #luckyText {
+    position: absolute;
+    top: 15rem;
+    left: 0.7rem;
+    text-align: center;
+    color: black;
+    font: x-large/3rem var(--resultFont);
+    letter-spacing: 0.1rem;
+}
+
+/* Card -- footer and reset common for both lucky and unlucky */
+
+#reset {
+    position: absolute;
+    top: 29rem;
+    left: 9.5rem;
+    border: 2px solid white;
+    background-color: black;
+    color: white;
+}
+
+#reset:hover {
+    background-color: white;
+    color: black;
+    border-color: black;
+}
+
+.card__footer #icons {
+    position: absolute;
+    top: 33.5rem;
+    left: 7.5rem;
+}
+
+.card__footer #icons i {
+    color: black;
+    padding: 0.5rem 0.5rem;
+    font-size: 1.3rem;
+}
+
+.card__footer #icons i:hover {
+    color: white;
+}

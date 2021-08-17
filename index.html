@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lucky Or Unlucky</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="card">
+      <div class="card__inner">
+        <!-- front side -->
+        <div class="card__face card__face--front">
+          <h1>Hello, Friend !</h1>
+          <p>
+            Let's see if you're lucky or not? <br />Fill in the details
+            here.
+          </p>
+            <label class="one">May I know your birthdate?</label>
+            <input type="date" id="date" max="9999-12-31"required />
+            <span id="errorMsg"></span>
+            <label class="two">What is your lucky number?</label>
+            <input
+              type="number"
+              id="luckyNum"
+              min="1"
+              placeholder="Enter your lucky number here"
+              required
+            />
+            <button type="submit" id="check">Check</button>
+        </div>
+
+        <!-- Back side -->
+        <div class="card__face card__face--back">
+          <!-- lucky-container -->
+          <div id="lucky-container">
+            <div id="luckyImg">
+              <img src="images/lucky-img.jpg" alt="Lucky-img" />
+            </div>
+            <h3 id="luckyText">
+              Woohoo! The app says,<br />
+              YOU ARE LUCKY !
+            </h3>
+          </div>
+
+          <!-- unlucky-container -->
+          <div id="unlucky-container">
+            <div id="unluckyImg">
+              <img src="images/unlucky-img.png" alt="unlucky-img" />
+            </div>
+            <h3 id="unluckyText">
+              Oops! The app says,<br />
+              YOU ARE UNLUCKY !
+            </h3>
+            </div>
+
+          <button id="reset">Reset</button>
+          <!-- Card Footer -->
+          <div class="card__footer">
+            <div id="icons">
+              <a target="_blank" href="https://uz8wp.csb.app/"><i class="fab fa-twitter"></i></a>
+              <a target="_blank" href="https://github.com/SHAGUN0312"><i class="fab fa-github"></i></a>
+              <a target="_blank" href="https://www.linkedin.com/in/shagun-bagrecha-05a6b7184"><i class="fab fa-linkedin-in"></i></a>
+              <a target="_blank" href=""><i class="fas fa-globe"></i> </a>
+            </div>
+          </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
